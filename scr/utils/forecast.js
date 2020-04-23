@@ -9,8 +9,7 @@ const forecast = (a, b, callback) => {
         } else if (body.error) {
             callback('Unable to define location', undefined)
         } else {
-            callback(undefined, body.current.weather_descriptions[0] + '. It is currently '+ body.current.temperature + ' degrees out. It feels like ' + body.current.feelslike, ' degrees out.' )
-            
+            callback(undefined, body.current.weather_descriptions[0] + '. It is currently '+ body.current.temperature + ' degrees out. It feels like ' + body.current.feelslike + ' degrees out. At: ' + body.current.observation_time)   
             }               
     })
 }
